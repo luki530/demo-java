@@ -15,14 +15,10 @@
     "overrides": {
         "containerOverrides": [
             {
-                "name": "kaniko",
+                "name": "kaniko-builder",
                 "command": [
                     "--context",
                     "s3://${KANIKO_BUILD_CONTEXT_BUCKET_NAME}/context.tar.gz",
-                    "--context-sub-path",
-                    "./build/docker",
-                    "--build-arg",
-                    "JAR_FILE=spring-boot-api-example-0.1.0-SNAPSHOT.jar",
                     "--destination",
                     "${KANIKO_REPOSITORY_URI}:latest",
                     "--force"
